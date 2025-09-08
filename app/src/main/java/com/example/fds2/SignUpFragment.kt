@@ -1,5 +1,8 @@
 package com.example.fds2
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.text.Editable
@@ -9,18 +12,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import com.example.fds2.database.DatabaseHelper
 
 class SignUpFragment : Fragment() {
-        override fun onCreateView(i: LayoutInflater, c: ViewGroup?, s: Bundle?) =
-            i.inflate(R.layout.fragment_sign_up, c, false)
+    override fun onCreateView(i: LayoutInflater, c: ViewGroup?, s: Bundle?) =
+        i.inflate(R.layout.fragment_sign_up, c, false)
 
     private lateinit var signupUsername: EditText
     private lateinit var signupPhone: EditText
     private lateinit var signupEmail: EditText
     private lateinit var signupButton: Button
     private lateinit var signupTV: TextView
+    private lateinit var dbHelper: DatabaseHelper
+
 
     override fun onViewCreated(v: View, s: Bundle?) {
 
@@ -32,6 +41,8 @@ class SignUpFragment : Fragment() {
 
         signupButton.isEnabled = false
 
+        dbHelper = DatabaseHelper(requireContext())
+
         var textWatcher = object : TextWatcher {
 
             override fun afterTextChanged(s: Editable?) {
@@ -39,7 +50,8 @@ class SignUpFragment : Fragment() {
                 val phone = signupPhone.text.toString().trim()
                 val mail = signupEmail.text.toString().trim()
 
-                signupButton.isEnabled = name.isNotEmpty() && phone.isNotEmpty() && mail.isNotEmpty()
+                signupButton.isEnabled =
+                    name.isNotEmpty() && phone.isNotEmpty() && mail.isNotEmpty()
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -50,12 +62,33 @@ class SignUpFragment : Fragment() {
         signupPhone.addTextChangedListener(textWatcher)
         signupEmail.addTextChangedListener(textWatcher)
 
-        signupButton.setOnClickListener {
-            findNavController().navigate(R.id.action_signup_to_home)
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.signupFragment, true) // This removes SignUp from back stack
+            .build()
+
+        signupTV.setOnClickListener {
+            findNavController().navigate(R.id.action_signup_to_login,null, navOptions)
         }
 
-        signupTV.setOnClickListener{
-            findNavController().navigate(R.id.action_signup_to_login)
+        signupButton.setOnClickListener {
+            val username = signupUsername.text.toString().trim()
+            val phone = signupPhone.text.toString().trim()
+            val email = signupEmail.text.toString().trim()
+
+            val result = dbHelper.insertUser(username, phone, email)
+            dbHelper.loginUser(username, phone)
+            if (result != -1L) {
+                v?.post {
+                    val bundle = Bundle().apply {
+                        putString("username", username)
+                        putString("phone", phone)
+                        putString("email", email)
+                    }
+                    findNavController().navigate(R.id.action_signup_to_home, bundle, navOptions)
+                }
+            } else {
+                Toast.makeText(context, "Signup Failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

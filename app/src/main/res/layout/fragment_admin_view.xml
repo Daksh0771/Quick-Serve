@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Welcome, Admin"
+            android:fontFamily="@font/mark_pro_bold"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Background CardView -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        app:cardElevation="10dp"
+        app:shapeAppearanceOverlay="@style/RoundCorners_Top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/dialog_bg"
+                android:backgroundTint="#478340"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20dp"
+                    android:text="Logged Users"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/mark_pro_bold"
+                    />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/dialog_bg"
+            android:backgroundTint="#478340"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:text="Order Details"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/mark_pro_bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnRestaurantView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/dialog_bg"
+            android:backgroundTint="#478340"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:text="Restaurant Details"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/mark_pro_bold"
+                />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/resource01"
+            android:fontFamily="@font/mark_pro_bold"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:backgroundTint="#920000"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            />
+
+    </FrameLayout>
+
+</LinearLayout>

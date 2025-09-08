@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#237300"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <!-- AppBar -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#237300"
+        android:background="@color/white"
         android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
 
         <TextView
@@ -20,7 +20,7 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/mark_pro_bold"
             android:text="Order Summary"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="25dp" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -93,8 +93,11 @@
             app:boxStrokeColor="#2AA500"
             app:cursorColor="#2AA500"
             app:hintTextColor="#2AA500"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp">
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_fullname"
@@ -117,8 +120,10 @@
             app:boxStrokeColor="#2AA500"
             app:cursorColor="#2AA500"
             app:hintTextColor="#2AA500"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp">
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_address"
@@ -141,8 +146,10 @@
                     app:boxStrokeColor="#2AA500"
                     app:cursorColor="#2AA500"
                     app:hintTextColor="#2AA500"
-                    app:boxCornerRadiusBottomEnd="30dp"
-                    app:boxCornerRadiusTopStart="30dp">
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    app:boxCornerRadiusBottomStart="15dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_phone"
@@ -167,14 +174,13 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:background="@drawable/resource01"
-        android:backgroundTint="@color/white"
         android:paddingTop="5dp"
         android:layout_marginTop="30dp"
         android:text="Place Order"
         android:enabled="false"
         android:textSize="20dp"
         android:fontFamily="@font/mark_pro_bold"
-        android:textColor="#237300"
+        android:textColor="@color/white"
         android:paddingBottom="5dp"/>
 
 </LinearLayout>

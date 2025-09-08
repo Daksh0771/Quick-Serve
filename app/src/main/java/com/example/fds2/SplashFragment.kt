@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 
 class SplashFragment : Fragment() {
@@ -37,7 +38,6 @@ class SplashFragment : Fragment() {
         imgSuccess = view.findViewById(R.id.imgSuccess)
         tvOrderPlaced = view.findViewById(R.id.tvOrderPlaced)
 
-        // OrderFragment se arguments (name, address, phone)
         val name = arguments?.getString("name") ?: ""
         val address = arguments?.getString("address") ?: ""
         val phone = arguments?.getString("phone") ?: ""
@@ -54,7 +54,11 @@ class SplashFragment : Fragment() {
 
         // 2nd delay -> Navigate back to Home
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splash_to_home)
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.nav_graph, true) // This removes SplashFragment from the back stack
+                .build()
+            CartManager.clearCart()
+            findNavController().navigate(R.id.action_splash_to_home,null, navOptions)
         }, 8000) // 8 sec total (4 sec loading + 4 sec success)
     }
 }

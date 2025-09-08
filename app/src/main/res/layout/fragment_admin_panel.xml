@@ -25,6 +25,29 @@
         android:fontFamily="@font/mark_pro_bold"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/dialog_bg"
+        android:backgroundTint="#4D7135"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to Client Panel"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mark_pro_medium"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="400dp"
@@ -67,7 +90,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_username"
+                    android:id="@+id/edit_adminUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
@@ -81,7 +104,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mobile Number"
+                android:hint="Password"
                 android:singleLine="true"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
@@ -97,11 +120,11 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_mobile"
+                    android:id="@+id/edit_adminPass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mark_pro_bold"
-                    android:inputType="phone"
+                    android:inputType="textPassword"
                     android:shadowColor="@color/white"
                     android:textSize="19dp">
 
@@ -111,7 +134,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/loginBtn"
+                android:id="@+id/loginAdminBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -123,34 +146,6 @@
                 android:layout_marginTop="40dp"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Creating a new Account?"
-                android:layout_marginLeft="25dp"
-                android:fontFamily="@font/mark_pro_medium"
-                android:textSize="16dp"
-                />
-
-            <TextView
-                android:id="@+id/loginTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Sign Up"
-                android:clickable="true"
-                android:textColor="#087300"
-                android:fontFamily="@font/mark_pro_bold"
-                android:textSize="16dp"
                 />
 
         </LinearLayout>

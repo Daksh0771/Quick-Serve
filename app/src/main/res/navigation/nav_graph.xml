@@ -10,6 +10,9 @@
             app:destination="@+id/homeFragment"/>
         <action android:id="@+id/action_signup_to_login"
             app:destination="@+id/loginFragment"/>
+        <action
+            android:id="@+id/action_signup_to_admin"
+            app:destination="@+id/adminPanelFragment"/>
     </fragment>
 
     <fragment
@@ -20,7 +23,28 @@
             app:destination="@id/homeFragment"/>
         <action
             android:id="@+id/action_login_to_signup"
-            app:destination="@+id/signupFragment" />
+            app:destination="@+id/signupFragment"/>
+        <action
+            android:id="@+id/action_login_to_admin"
+            app:destination="@+id/adminPanelFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminPanelFragment"
+        android:name="com.example.fds2.AdminPanelFragment">
+        <action
+            android:id="@+id/action_adminLoginFragment_to_adminPanelFragment"
+            app:destination="@+id/adminViewFragment"/>
+        <action
+            android:id="@+id/goBack"
+            app:destination="@+id/signupFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminViewFragment"
+        android:name="com.example.fds2.AdminViewFragment">
+
     </fragment>
 
     <fragment
@@ -45,7 +69,39 @@
             app:destination="@+id/restaurantMenu4"
             />
 
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@+id/profileFragment"
+            />
     </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fds2.ProfileFragment">
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@+id/loginFragment"/>
+
+        <action
+            android:id="@+id/action_profile_to_signup"
+            app:destination="@+id/signupFragment"/>
+
+        <action
+            android:id="@+id/action_profile_to_orderHistory"
+            app:destination="@+id/orderHistoryFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.example.fds2.OrderHistoryFragment">
+        <action
+            android:id="@+id/action_orderHistory_to_orderDetail"
+            app:destination="@+id/orderDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.example.fds2.OrderDetailsFragment"/>
 
     <fragment
         android:id="@+id/restaurantMenu1"

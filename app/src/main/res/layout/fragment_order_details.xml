@@ -1,0 +1,82 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receipt from QuickServe"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:fontFamily="@font/mark_pro_heavy"
+            />
+
+        <TextView android:id="@+id/tvDetailName"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="70dp"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/mark_pro_medium"
+            />
+        <TextView android:id="@+id/tvDetailAddress"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/mark_pro_medium"
+            />
+        <TextView android:id="@+id/tvDetailPhone"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/mark_pro_medium"
+            />
+        <TextView android:id="@+id/tvDetailDate"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/mark_pro_medium"
+            />
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCC"
+            android:layout_marginVertical="8dp"/>
+        <TextView android:id="@+id/tvDetailItems"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/mark_pro_medium"
+            />
+        <TextView android:id="@+id/tvDetailTotal"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:fontFamily="@font/mark_pro_bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enjoy your meal!!"
+            android:textAlignment="center"
+            android:layout_marginTop="50dp"
+            android:textSize="25dp"
+            android:fontFamily="@font/mark_pro_heavy"
+            />
+
+    </LinearLayout>
+</ScrollView>

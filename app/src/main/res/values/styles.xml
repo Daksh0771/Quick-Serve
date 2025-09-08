@@ -3,6 +3,8 @@
     <style name="RoundCorners" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">35dp</item>
+        <item name="cornerSizeTopRight">25dp</item>
+        <item name="cornerSizeBottomLeft">25dp</item>
         <item name="cornerSizeBottomRight">35dp</item>
     </style>
 
@@ -10,6 +12,7 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">25dp</item>
         <item name="cornerSizeTopRight">25dp</item>
+
     </style>
 
     <style name="CustomText" parent="">

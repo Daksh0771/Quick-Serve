@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/mark_pro_heavy"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mark_pro_medium"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/dialogMessage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mark_pro_medium"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/mark_pro_bold"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/resource01"
+            android:backgroundTint="#970000"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnYes"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:fontFamily="@font/mark_pro_bold"
+            android:background="@drawable/resource01"
+            android:backgroundTint="#1B6600"
+            android:layout_marginStart="18dp"/>
+    </LinearLayout>
+</LinearLayout>

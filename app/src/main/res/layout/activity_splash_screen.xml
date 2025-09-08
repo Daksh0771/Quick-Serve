@@ -5,18 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     android:background="#043800"
     tools:context="com.example.fds2.SplashScreen">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/quick_serve"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Greetings!"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:textAlignment="center"
-        android:fontFamily="@font/mark_pro_heavy"
+        android:fontFamily="@font/mark_pro_medium"
         android:textColor="@color/white"
+        android:text="by VTD"
         />
 
 </LinearLayout>

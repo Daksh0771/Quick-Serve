@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@android:color/white"
     android:gravity="center">
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Confirming Order..."
+        android:fontFamily="@font/mark_pro_bold"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
@@ -28,7 +29,8 @@
         android:id="@+id/imgSuccess"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@android:drawable/checkbox_on_background"
+        android:src="@drawable/baseline_check_circle_24"
+        app:tint="#1C6A00"
         android:visibility="gone" />
 
     <!-- Order Placed Text -->
@@ -38,7 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Order Placed!"
-        android:textColor="@android:color/holo_green_dark"
+        android:fontFamily="@font/mark_pro_bold"
+        android:textColor="#1C6A00"
         android:textSize="20sp"
         android:visibility="gone" />
 </LinearLayout>

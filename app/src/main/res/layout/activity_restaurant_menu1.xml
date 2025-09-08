@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#237300"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".fragments.Restaurant1">
 
@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#237300"
+        android:background="@color/white"
         android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
 
         <TextView
@@ -21,7 +21,7 @@
             android:layout_marginTop="15dp"
             android:fontFamily="@font/mark_pro_bold"
             android:text="Pizza Stack"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="25dp" />
 
         <EditText
@@ -35,6 +35,7 @@
             android:textSize="20dp"
             android:paddingLeft="20dp"
             android:singleLine="true"
+            android:textColorHint="#AB000000"
             android:fontFamily="@font/mark_pro_medium"
             android:paddingTop="10dp"
             android:background="@drawable/resource02"
@@ -369,13 +370,12 @@
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:background="@drawable/resource01"
-            android:backgroundTint="@color/white"
             android:paddingTop="5dp"
             android:text="Order"
             android:visibility="gone"
             android:textSize="20dp"
             android:fontFamily="@font/mark_pro_bold"
-            android:textColor="#237300"
+            android:textColor="@color/white"
             android:paddingBottom="5dp"/>
 
     </FrameLayout>

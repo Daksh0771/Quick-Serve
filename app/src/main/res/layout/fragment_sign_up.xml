@@ -11,16 +11,17 @@
         android:layout_width="137dp"
         android:layout_height="123dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/baseline_person_24" />
+        android:src="@drawable/quick_serve" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:text="Welcome to AppName"
+        android:text="Welcome to QuickServe"
         android:textColor="@color/white"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:fontFamily="@font/mark_pro_bold"
         />
 
@@ -68,8 +69,10 @@
                 app:boxStrokeColor="#2AA500"
                 app:cursorColor="#2AA500"
                 app:hintTextColor="#2AA500"
-                app:boxCornerRadiusTopEnd="30dp"
-                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -94,6 +97,10 @@
                 app:boxStrokeColor="#2AA500"
                 app:cursorColor="#2AA500"
                 app:hintTextColor="#2AA500"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -118,8 +125,10 @@
                 app:boxStrokeColor="#2AA500"
                 app:hintTextColor="#2AA500"
                 app:cursorColor="#2AA500"
-                app:boxCornerRadiusBottomEnd="30dp"
-                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -127,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mark_pro_bold"
-                    android:inputType="textPassword"
+                    android:inputType="textEmailAddress"
                     android:shadowColor="@color/white"
                     android:textSize="19dp">
 

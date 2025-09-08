@@ -21,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.fds2.database.DatabaseHelper
 
 class OrderSummaryFragment : Fragment() {
 
@@ -159,12 +160,30 @@ class OrderSummaryFragment : Fragment() {
             val address = etAddress.text.toString()
             val phone = etPhone.text.toString()
 
-            val bundle = Bundle().apply {
-                putString("Name: ", name)
-                putString("Delivering to: ", address)
-                putString("Phone: ", phone)
-            }
+            val dbHelper = DatabaseHelper(requireContext())
+            val user = dbHelper.getLoggedInUser()
+
+            if (user != null) {
+                val result = dbHelper.insertOrder(
+                    user.id,
+                    name,
+                    address,
+                    phone,
+                    CartManager.cartItems
+                )
+
+                if (result != -1L) {
+                    CartManager.clearCart()
+                }
+
+                val bundle = Bundle().apply {
+                    putString("name", name)
+                    putString("address", address)
+                    putString("phone", phone)
+                }
+
                 findNavController().navigate(R.id.action_order_to_splash, bundle)
             }
         }
     }
+}
