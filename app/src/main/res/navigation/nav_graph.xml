@@ -89,6 +89,10 @@
         <action
             android:id="@+id/action_profile_to_orderHistory"
             app:destination="@+id/orderHistoryFragment"/>
+
+        <action
+            android:id="@+id/action_profile_to_cart"
+            app:destination="@+id/orderSummary"/>
     </fragment>
 
     <fragment

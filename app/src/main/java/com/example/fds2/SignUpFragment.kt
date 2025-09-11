@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -75,21 +77,38 @@ class SignUpFragment : Fragment() {
             val phone = signupPhone.text.toString().trim()
             val email = signupEmail.text.toString().trim()
 
-            val result = dbHelper.insertUser(username, phone, email)
-            dbHelper.loginUser(username, phone)
-            if (result != -1L) {
-                v?.post {
+            // Show loading dialog
+            val loadingView = layoutInflater.inflate(R.layout.progress_bar, null)
+            loadingView.findViewById<TextView>(R.id.tvLoadingMessage).text = "Signing up..."
+
+            val loadingDialog = Dialog(requireContext())
+            loadingDialog.setContentView(loadingView)
+            loadingDialog.setCancelable(false)
+            loadingDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            loadingDialog.show()
+
+            // Simulate delay or run DB logic immediately (ideally move this to coroutine/thread)
+            Handler(Looper.getMainLooper()).postDelayed({
+                val result = dbHelper.insertUser(username, phone, email)
+
+                if (result != -1L) {
+                    dbHelper.loginUser(username, phone)
+
                     val bundle = Bundle().apply {
                         putString("username", username)
                         putString("phone", phone)
                         putString("email", email)
                     }
+
+                    loadingDialog.dismiss()
                     findNavController().navigate(R.id.action_signup_to_home, bundle, navOptions)
+                } else {
+                    loadingDialog.dismiss()
+                    Toast.makeText(context, "Signup Failed", Toast.LENGTH_SHORT).show()
                 }
-            } else {
-                Toast.makeText(context, "Signup Failed", Toast.LENGTH_SHORT).show()
-            }
+            }, 7000) // Optional: 1s delay to simulate loading
         }
+
     }
 }
 

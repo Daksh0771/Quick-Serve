@@ -20,7 +20,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="530dp"
         android:layout_marginTop="30dp"
         app:cardElevation="10dp"
         app:shapeAppearanceOverlay="@style/RoundCorners_Top">
@@ -68,6 +68,38 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnMyCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="245dp"
+            android:clickable="true"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:backgroundTint="#99A0A0A0"
+            android:background="@drawable/resource_menu"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_shopping_cart_24"
+                android:layout_marginLeft="25dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mark_pro_bold"
+                android:textSize="22dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:text="My Cart"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/btnOrderHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +135,7 @@
             android:id="@+id/btnLogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="275dp"
+            android:layout_marginTop="345dp"
             android:clickable="true"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
@@ -136,7 +168,7 @@
             android:id="@+id/btnDeleteAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="338dp"
+            android:layout_marginTop="410dp"
             android:clickable="true"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"

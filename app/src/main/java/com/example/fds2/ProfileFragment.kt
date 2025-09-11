@@ -28,6 +28,7 @@ class ProfileFragment : Fragment() {
     private lateinit var logOut: LinearLayout
     private lateinit var history: LinearLayout
     private lateinit var delete: LinearLayout
+    private lateinit var cart: LinearLayout
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +39,11 @@ class ProfileFragment : Fragment() {
         logOut = view.findViewById(R.id.btnLogOut)
         history = view.findViewById(R.id.btnOrderHistory)
         delete = view.findViewById(R.id.btnDeleteAccount)
+        cart = view.findViewById(R.id.btnMyCart)
+
+        cart.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_cart)
+        }
 
         history.setOnClickListener{
             findNavController().navigate(R.id.action_profile_to_orderHistory)

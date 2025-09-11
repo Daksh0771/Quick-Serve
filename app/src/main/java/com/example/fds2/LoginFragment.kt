@@ -1,6 +1,11 @@
 package com.example.fds2
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -62,38 +67,47 @@ class LoginFragment : Fragment() {
             .build()
 
         loginButton.setOnClickListener {
+            val loadingView = layoutInflater.inflate(R.layout.progress_bar, null)
+            loadingView.findViewById<TextView>(R.id.tvLoadingMessage).text = "Logging in..."
+
+            val loadingDialog = Dialog(requireContext())
+            loadingDialog.setContentView(loadingView)
+            loadingDialog.setCancelable(false)
+            loadingDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            loadingDialog.show()
+
             val username = loginUsername.text.toString().trim()
             val phone = loginMobile.text.toString().trim()
 
+            Handler(Looper.getMainLooper()).postDelayed({
+                if (dbhelper.checkUser(username, phone)) {
+                    dbhelper.loginUser(username, phone)
 
-            //findNavController().navigate(R.id.action_login_to_home)
+                    val db = dbhelper.readableDatabase
+                    val cursor = db.rawQuery(
+                        "SELECT email FROM users WHERE username = ?",
+                        arrayOf(username)
+                    )
+                    var email: String? = null
+                    if (cursor.moveToFirst()) {
+                        email = cursor.getString(cursor.getColumnIndexOrThrow("email"))
+                    }
+                    cursor.close()
+                    db.close()
 
-            if (dbhelper.checkUser(username, phone)) {
-                dbhelper.loginUser(username, phone)
-                // Get email directly from DB without modifying dbHelper
-                val db = dbhelper.readableDatabase
-                val cursor = db.rawQuery(
-                    "SELECT email FROM users WHERE username = ?",
-                    arrayOf(username)
-                )
-                var email: String? = null
-                if (cursor.moveToFirst()) {
-                    email = cursor.getString(cursor.getColumnIndexOrThrow("email"))
+                    val bundle = Bundle().apply {
+                        putString("username", username)
+                        putString("phone", phone)
+                        putString("email", email)
+                    }
+
+                    loadingDialog.dismiss() // 👈 Don't forget this!
+                    findNavController().navigate(R.id.action_login_to_home, bundle, navOptions)
+                } else {
+                    loadingDialog.dismiss() // 👈 Also dismiss here on failure!
+                    Toast.makeText(context, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
                 }
-                cursor.close()
-                db.close()
-
-                val bundle = Bundle().apply {
-                    putString("username", username)
-                    putString("phone", phone)
-                    putString("email", email)  // pass email here!
-                }
-
-                findNavController().navigate(R.id.action_login_to_home, bundle, navOptions)
-            }
-            else{
-                Toast.makeText(context, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
-            }
+            }, 5000) // Optional: delay to simulate loading
         }
         loginTV.setOnClickListener{
             findNavController().navigate(R.id.action_login_to_signup,null, navOptions)
