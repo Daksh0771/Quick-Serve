@@ -12,9 +12,9 @@ class DatabaseHelper(context: Context) :
         db?.execSQL(
             "CREATE TABLE users (" +
                     "user_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "username TEXT UNIQUE, " +
-                    "mobile TEXT, " +
-                    "email TEXT, " +
+                    "username TEXT, " +
+                    "mobile TEXT UNIQUE, " +
+                    "email TEXT UNIQUE, " +
                     "is_logged_in INTEGER DEFAULT 0)"
         )
 

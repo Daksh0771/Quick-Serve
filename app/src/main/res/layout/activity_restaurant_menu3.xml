@@ -32,6 +32,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:hint="Search in Chinatown"
+            android:textColor="@color/black"
+            android:singleLine="true"
             android:textSize="20dp"
             android:paddingLeft="20dp"
             android:textColorHint="#AB000000"

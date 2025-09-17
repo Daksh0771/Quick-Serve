@@ -79,6 +79,7 @@
                     android:id="@+id/edit_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
                     android:fontFamily="@font/mark_pro_bold"
                     android:textSize="19dp">
 
@@ -107,6 +108,9 @@
                     android:id="@+id/edit_mobile_num"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:maxLength="10"
                     android:fontFamily="@font/mark_pro_bold"
                     android:textSize="19dp">
 
@@ -135,6 +139,7 @@
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
                     android:fontFamily="@font/mark_pro_bold"
                     android:inputType="textEmailAddress"
                     android:shadowColor="@color/white"

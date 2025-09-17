@@ -32,7 +32,7 @@
             android:paddingLeft="20dp"
             android:textSize="20dp"
             android:paddingRight="20dp"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="290dp"
             android:src="@drawable/baseline_person_24"
             app:tint="@color/black" />
 
@@ -46,6 +46,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:hint="Search..."
+            android:singleLine="true"
+            android:textColor="@color/black"
             android:textColorHint="#AB000000"
             android:fontFamily="@font/mark_pro_medium"
             android:textSize="20dp"
@@ -243,14 +245,15 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/tab_background"
+            android:backgroundTint="@color/white"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             app:tabIndicator="@drawable/tab_indicator"
-            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorColor="#237300"
             app:tabIndicatorGravity="stretch"
-            app:tabSelectedTextColor="#237300"
+            app:tabSelectedTextColor="@color/white"
             app:tabTextAppearance="@style/CustomText"
-            app:tabTextColor="@color/white">
+            app:tabTextColor="#237300">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabExplore"

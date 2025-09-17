@@ -101,7 +101,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mark_pro_bold"
-                    android:inputType="phone"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:minEms="10"
                     android:shadowColor="@color/white"
                     android:textSize="19dp">
 

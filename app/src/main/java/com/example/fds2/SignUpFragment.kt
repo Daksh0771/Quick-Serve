@@ -9,6 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,9 +52,30 @@ class SignUpFragment : Fragment() {
                 val name = signupUsername.text.toString().trim()
                 val phone = signupPhone.text.toString().trim()
                 val mail = signupEmail.text.toString().trim()
+                val input = s.toString()
 
                 signupButton.isEnabled =
-                    name.isNotEmpty() && phone.isNotEmpty() && mail.isNotEmpty()
+                    name.isNotEmpty() && phone.isNotEmpty() && mail.isNotEmpty() && phone.length == 10
+
+                if (signupEmail.hasFocus() && input.contains("@")) {
+                    val altIndex = input.indexOf("@")
+                        val domainEnd = input.indexOf('.',altIndex)
+
+                        if (domainEnd != -1){
+                            val tldEnd = domainEnd + 4
+
+                            if(input.length > tldEnd){
+
+                            signupEmail.removeTextChangedListener(this)
+                            val cursorPos = signupEmail.selectionStart
+                            val allowedText = input.substring(0, domainEnd + 4)
+                            signupEmail.setText(allowedText)
+                            val newCursor = cursorPos.coerceAtMost(allowedText.length)
+                            signupEmail.setSelection(newCursor)
+                            signupEmail.addTextChangedListener(this)
+                        }
+                    }
+                }
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -76,6 +98,12 @@ class SignUpFragment : Fragment() {
             val username = signupUsername.text.toString().trim()
             val phone = signupPhone.text.toString().trim()
             val email = signupEmail.text.toString().trim()
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+               signupEmail.error = "Enter a valid email"
+               signupEmail.requestFocus()
+               return@setOnClickListener
+            }
 
             // Show loading dialog
             val loadingView = layoutInflater.inflate(R.layout.progress_bar, null)

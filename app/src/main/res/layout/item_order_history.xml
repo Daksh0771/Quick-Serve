@@ -6,5 +6,9 @@
     android:textSize="18sp"
     android:padding="16dp"
     android:clickable="true"
+    android:textColor="@color/white"
+    android:background="@drawable/resource_menu"
+    android:backgroundTint="#CE105600"
+    android:layout_marginBottom="10dp"
     android:fontFamily="@font/mark_pro_bold"
     android:foreground="?android:attr/selectableItemBackground"/>

@@ -33,6 +33,8 @@
             android:layout_marginRight="20dp"
             android:hint="Search in Thalapathy's"
             android:textColorHint="#AB000000"
+            android:textColor="@color/black"
+            android:singleLine="true"
             android:textSize="20dp"
             android:paddingLeft="20dp"
             android:fontFamily="@font/mark_pro_medium"

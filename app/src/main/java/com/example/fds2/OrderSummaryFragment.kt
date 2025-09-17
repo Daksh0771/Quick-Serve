@@ -144,7 +144,7 @@ class OrderSummaryFragment : Fragment() {
                 val mobile = etPhone.text.toString().trim()
 
                 btnOrder.isEnabled = fullname.isNotEmpty() && fulladdress.isNotEmpty()
-                        && mobile.isNotEmpty()
+                        && mobile.isNotEmpty() && mobile.length == 10
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

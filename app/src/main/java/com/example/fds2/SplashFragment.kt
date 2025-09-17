@@ -38,11 +38,12 @@ class SplashFragment : Fragment() {
         imgSuccess = view.findViewById(R.id.imgSuccess)
         tvOrderPlaced = view.findViewById(R.id.tvOrderPlaced)
 
-        val name = arguments?.getString("name") ?: ""
-        val address = arguments?.getString("address") ?: ""
-        val phone = arguments?.getString("phone") ?: ""
+        //val name = arguments?.getString("name") ?: ""
+       // val address = arguments?.getString("address") ?: ""
+        //val phone = arguments?.getString("phone") ?: ""
 
-        tvOrderDetails.text = "Confirming order for:\n$name\nDelivering to:\n$address\nContact: $phone"
+        //tvOrderDetails.text = "Confirming order for:\n$name\nDelivering to:\n$address\nContact: $phone"
+        tvOrderDetails.text = "Confirming order.."
 
         // 1st delay -> Show loading (already default)
         Handler(Looper.getMainLooper()).postDelayed({

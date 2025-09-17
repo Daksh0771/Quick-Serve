@@ -52,7 +52,7 @@ class LoginFragment : Fragment() {
                 val username = loginUsername.text.toString().trim()
                 val mobile = loginMobile.text.toString().trim()
 
-                loginButton.isEnabled = username.isNotEmpty() && mobile.isNotEmpty()
+                loginButton.isEnabled = username.isNotEmpty() && mobile.isNotEmpty() && mobile.length == 10
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

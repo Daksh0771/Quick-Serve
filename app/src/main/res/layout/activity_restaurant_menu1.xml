@@ -34,6 +34,7 @@
             android:hint="Search in Pizza Stack"
             android:textSize="20dp"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:singleLine="true"
             android:textColorHint="#AB000000"
             android:fontFamily="@font/mark_pro_medium"
